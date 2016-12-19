@@ -1,0 +1,69 @@
+<svg id='shotchart' class="img-responsive" viewBox="0 0 500 470">
+  <image xlink:href="img/shotchart_court.png" width="500" height="470"></image>
+
+  <g>
+    */ Draw the main court rectangle */
+    <rect x='0' y='0' width='500' height='470' class='main'/>
+    
+    Draw the rectangles for the lanes */
+    <rect x='190' y='280' width='120' height='190' class='lane'/>
+    
+    /* Draw the center court line and circles */
+    <circle cx='250' cy='0' r='60' class='center-court' id='court'/>
+    <circle cx='250' cy='0' r='20' class='inner-court' id='court'/>
+    <line x1='0' y1='0' x2='470' y2='0'/>
+    
+    /* Draw the three-point arcs */
+    <path d="M42.5, 417.5 A207.5, 207.5 0 0,1 457.5, 417.5" id='court'/>
+    
+    /* Draw the three-point side lines */
+    <line x1='42.5' y1='417.5' x2='42.5' y2='470'/>
+    <line x1='457.5' y1='417.5' x2='457.5' y2='470'/>
+    
+    /* Draw the arcs above and below the foul line */
+    <path d="M190, 280 A60, 60 0 0,1 310, 280" id='court'/>
+    <path d="M190, 280 A60, 60 0 0,0 310, 280" stroke-dasharray = "10,10" id='court'/>
+    
+    /* Draw the hoops & backboards */
+    <circle cx='250' cy='417.5' r='7.5' id='court'/>
+    <line x1='220' y1='430' x2='280' y2='430'/>
+    
+    /* Draw the restricted area */
+    <path d="M210, 417.5 A40, 40 0 0,1 290, 417.5" id='court'/>
+    
+    /* Draw the tooltip box */
+    <rect x="320" y="10" width="170" height="90" class="lane"/>
+    <text x="325" y="30">Shooter: </text>
+    <text x="325" y="50">Defender: </text>
+    <text x="325" y="70">Dribbles: </text>
+    <text x="325" y="90">Clock: </text>
+  </g>
+
+  <g ng-if="pl.selected" ng-repeat="pl in team.players">
+    <g ng-repeat="sh in pl">
+      <circle ng-if="sh['x-coordinate'] > 47" 
+              ng-attr-cx="{{sh['y-coordinate']*10}}"
+              ng-attr-cy="{{sh['x-coordinate']*10 - 470}}"
+              ng-mouseover="updateToolTip(sh)"
+              ng-mouseout="updateToolTip(0)"
+              r="5"
+              class="{{sh.result}}">
+      </circle>
+      
+      <circle ng-if="sh['x-coordinate'] < 47"
+              ng-attr-cx="{{sh['y-coordinate']*10}}"
+              ng-attr-cy="{{470 - sh['x-coordinate']*10}}"
+              ng-mouseover="updateToolTip(sh)"
+              ng-mouseout="updateToolTip(0)"
+              r="5"
+              class="{{sh.result}}">
+      </circle>
+    </g>
+  </g>
+  <g>
+    <text class="info" x="485" y="30" ng-show="tooltip.pid"> {{ tooltip.shooter }} </text>
+    <text class="info" x="485" y="50" ng-show="tooltip.pid"> {{ tooltip.defender }} </text>
+    <text class="info" x="485" y="70" ng-show="tooltip.pid"> {{ tooltip.dribbles }} </text>
+    <text class="info" x="485" y="90" ng-show="tooltip.pid"> {{ tooltip.clock | date: "mm:ss" }} </text>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<table class="table table-sm table-hover table-bordered">
+  <tr>
+    <th>
+      <input  type="checkbox"
+              ng-model="team.allItemsSelected"
+              ng-init="team.allItemsSelected=true"
+              ng-change="selectAll()">
+    </th>
+    <th> Player </th>
+  </tr>
+  <tr ng-repeat="pl in team.players" ng-class="{selected: pl.selected}">
+    <td> <input type="checkbox" ng-model="pl.selected" ng-init="pl.selected=true" ng-change="selectPlayer()"> </td>
+    <td> {{ pl[0]['first-name'] }} {{ pl[0]['last-name'] }} </td>
+  </tr>
+</table>

@@ -1,0 +1,113 @@
+body {
+	/* Margin bottom by footer height */
+  	margin-bottom: 60px;
+	background-color: #E5E5E5;
+}
+rect.main{
+    /* fill: #C09C4E; */
+    fill: none;
+}
+rect.lane{
+    fill: #001A57;
+    fill-opacity: .8;
+}
+circle.center-court{
+    fill: #001A57;
+    fill-opacity: .8;
+}
+circle.made{
+    fill: #4DFA90;
+    stroke: white;
+    stroke-width: 0;
+}
+circle.missed{
+    fill: #FF5468;
+    stroke: white;
+    stroke-width: 0;
+}
+circle.orbd{
+    stroke: white;
+    stroke-width: 1;
+}
+circle.drbd{
+    fill: white;
+    stroke-width: 0;
+}
+circle.pass{
+    fill: black;
+    stroke-width: 0;
+}
+circle.assist{
+    stroke: black;
+    stroke-width: 1;
+}
+path.hull{
+    fill: white;
+    opacity: .3;
+}
+rect, circle, line, path{
+    fill: none;
+    stroke: white;
+    stroke-width: 3;
+}
+text{
+    fill: white;
+    /* font-size: 19px */
+    text-anchor: start;
+    text-align: center;
+    vertical-align: middle;
+    /* alignment-baseline: middle; */
+    /* dominant-baseline: middle; */
+}
+text.info {
+  text-anchor: end;
+}
+h2, h3 {
+    text-align: center;
+}
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+span.glyphicon{
+    font-size: 35px;
+}
+
+.row-no-padding > [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+table {
+	background-color: #FFF;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  	background-color: #B5B5B5;
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+.footer {
+  	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	/* Set the fixed height of the footer here */
+  	height: 60px;
+  	line-height: 60px; /* Vertically center the text there */
+  	background-color: #f5f5f5;
+  	/*font-family: 'Roboto', sans-serif;*/
+	/*font-family: "Source Sans Pro", Helvetica, sans-serif;*/
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: center;
+    font-variant: small-caps;
+	color: #808080;
+	font-weight: 300;
+}
+.footer a{
+	width: 100%; 
+    font-family: 'Roboto', sans-serif;
+    font-variant: none;
+	text-align: center; 
+    color: #1E477B;
+}
